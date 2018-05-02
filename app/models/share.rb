@@ -7,7 +7,6 @@ class Share < ApplicationRecord
 		data_serialized = open(url).read
 		data = JSON.parse(data_serialized)
 		data
-		self.ticker
   end	
 
 end
