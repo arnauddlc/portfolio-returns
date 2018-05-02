@@ -1,7 +1,7 @@
 class SharesController < ApplicationController
   def new
   	set_portfolio
-  	@share = Share.new
+  	@share = Share.new(portfolio: @portfolio, current_price: 10)
   end
 
   def create
