@@ -5,3 +5,26 @@
 	<li>The original cost of your portfolio: <%= @portfolio.total_cost %></li>
 	<li>Your ROI (annualised): <%= @portfolio.yearly_return %> %</li>
 </ul>
+
+<br>
+
+<h2>Update your portfolio</h2>
+<%= link_to new_portfolio_share_path(@portfolio) do %>
+	<div class="btn btn-success">Add a share</div>
+<% end %>
+
+<br>
+
+<h2>Your portfolio composition</h2>
+<% if @portfolio.shares == nil %>
+	<p>No share in your portfolio!</p>
+<% else %>
+	<% @portfolio.shares.each do |share| %>
+		<ul>
+			<li>Name: <%= share.name %></li>
+			<li>Ticker: <%= share.ticker %></li>
+			<li>Average price: <%= share.buy_price %></li>
+			<li>Current price: <%= share.current_price %></li>
+		</ul>
+	<% end %>
+<% end %>

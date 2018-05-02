@@ -1,0 +1,10 @@
+<h1>Shares#new</h1>
+<p>Set details of your new share here</p>
+
+<%= simple_form_for(@share) do |f| %>
+    <%= f.input :name, label: true, autofocus: true %>
+    <%= f.input :ticker, label: true %>
+    <%= f.input :buy_date, label: true %>
+    <%= f.input :buy_price, label: true %>
+		<%= f.button :submit %>
+<% end %>
